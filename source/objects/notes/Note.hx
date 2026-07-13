@@ -20,7 +20,7 @@ import flixel.FlxSprite;
 import flixel.FlxG;
 import haxe.Json;
 
-#if windows
+#if sys
 import sys.FileSystem;
 import sys.io.File;
 #end

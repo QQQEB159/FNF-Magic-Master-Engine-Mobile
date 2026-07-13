@@ -39,8 +39,10 @@ class Magic {
     public static function unload():Void {
         Mods.unload();
 
+        #if windows
         Windows.resetBorderColor();
         Windows.resetIcon();
+        #end
         FlxG.mouse.unload();
 
         Controls.reset();
