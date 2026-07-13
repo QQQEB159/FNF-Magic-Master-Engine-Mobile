@@ -4,11 +4,11 @@
         "pkgs": [
             {
                 "name": "flixel",
-                "version": "5.2.2"
+                "version": "5.5.0"
             },
             {
                 "name": "flixel-addons",
-                "version": "3.0.2"
+                "version": "3.2.1"
             },
             {
                 "name": "flixel-ui",
@@ -34,7 +34,7 @@
             },
             {
                 "name": "openfl",
-                "version": "9.2.2"
+                "version": "9.3.2"
             },
             {
                 "name": "newgrounds",
