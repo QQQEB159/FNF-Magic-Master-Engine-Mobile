@@ -76,6 +76,11 @@ class Files {
 		}
 
 		System.gc();
+		#if cpp
+		cpp.NativeGc.run(true);
+		#elseif hl
+		hl.Gc.major();
+		#end
 	}
 	public static function clearMemoryAssets():Void {
 		@:privateAccess

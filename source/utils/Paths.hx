@@ -39,6 +39,7 @@ class Paths {
 	public static function setPath(key):String { return #if sys FileSystem.absolutePath(key) #else key #end; }
 	public static function getPath(file:String, type:AssetType, ?library:String, ?mod_name:String) {
 		if (mod_name != null) { return getModPath(file, mod_name); }
+		if (library == "mobile") return getForcedPath('mobile/$file');
 		if (library != null) { return getLibraryPath(file, library); }
 
 		var levelPath = getLibraryPathForce(file, "shared");
