@@ -28,9 +28,10 @@ import objects.ui.UINumericStepper;
 
 #if desktop
 import utils.Discord;
+#end
+
 import sys.FileSystem;
 import sys.io.File;
-#end
 
 using utils.Files;
 using StringTools;
@@ -62,9 +63,11 @@ class MainMenuState extends MusicBeatState {
 	override function create() {
 		if (FlxG.sound.music == null || (FlxG.sound.music != null && !FlxG.sound.music.playing)) { FlxG.sound.playMusic(Paths.music('freakyMenu').getSound()); }
 
+		#if desktop
 		// Updating Discord Rich Presence
 		Discord.change("In the Menus", null);
 		Magic.setWindowTitle('In the Menus');
+		#end
 
 		var bg = new FlxSprite().loadGraphic(Paths.image('menuBG').getGraphic());
 		bg.setGraphicSize(FlxG.width, FlxG.height);

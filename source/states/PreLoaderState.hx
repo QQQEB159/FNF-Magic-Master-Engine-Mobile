@@ -36,10 +36,11 @@ import utils.Mods;
 
 #if desktop
 import utils.Discord;
+#end
+
 import sys.thread.Thread;
 import sys.FileSystem;
 import sys.io.File;
-#end
 
 #if windows
 import utils.native.Windows;

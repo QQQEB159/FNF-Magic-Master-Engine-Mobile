@@ -227,8 +227,10 @@ class PlayState extends MusicBeatState {
 	override public function create() {
 		song = Songs.playlist.length > 0 ? Songs.playlist[0] : Song.load('Tutorial-Normal-Normal');
 		
+		#if desktop
 		Discord.change("Playing " + song.song, null);
 		Magic.setWindowTitle("Playing " + song.song);
+		#end
 
 		strumRightPos = FlxG.width - 100;
 		strumMiddlePos = FlxG.width / 2;

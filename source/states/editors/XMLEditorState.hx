@@ -20,10 +20,12 @@ import flixel.FlxObject;
 import flixel.FlxG;
 import utils.Magic;
 
-#if desktop
+#if sys
 import sys.FileSystem;
 import sys.io.File;
+#end
 
+#if desktop
 import utils.Discord;
 #end
 

@@ -1,11 +1,14 @@
 package utils;
 
+#if desktop
 import Sys.sleep;
 import discord_rpc.DiscordRpc;
+#end
 
 using StringTools;
 
 class Discord {
+	#if desktop
 	public function new():Void {
 		trace("Discord Client starting...");
 
@@ -66,4 +69,5 @@ class Discord {
 	private static function onDisconnected(_code:Int, _message:String) {
         trace('Disconnected! $_code : $_message');
     }
+    #end
 }

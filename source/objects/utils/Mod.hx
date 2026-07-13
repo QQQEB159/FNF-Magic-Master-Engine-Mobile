@@ -8,7 +8,7 @@ import flixel.FlxG;
 import utils.Mods;
 import haxe.Json;
 
-#if (desktop && sys)
+#if sys
 import sys.FileSystem;
 import sys.io.File;
 #end

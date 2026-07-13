@@ -13,9 +13,10 @@ import flixel.FlxG;
 
 #if desktop
 import utils.Discord;
+#end
+
 import sys.FileSystem;
 import sys.io.File;
-#end
 
 using utils.Files;
 using StringTools;
@@ -44,9 +45,11 @@ class ModListState extends MusicBeatState {
 		Paths.useMods = false;
 		Magic.unload();
 
+		#if desktop
 		// Updating Discord Rich Presence
 		Discord.change("Configuring Mods", null);
 		Magic.setWindowTitle('Configuring Mods');
+		#end
 
 		super.create();
 		

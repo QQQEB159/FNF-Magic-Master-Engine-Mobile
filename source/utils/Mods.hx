@@ -8,7 +8,7 @@ import hscript.Interp;
 import flixel.FlxG;
 import haxe.Json;
 
-#if (desktop && sys)
+#if sys
 import sys.FileSystem;
 import sys.io.File;
 #end
@@ -70,12 +70,12 @@ class Mods {
         Mods.list = []; // Clear Mod List
 
         //Adding Mods from Archives
-        #if (desktop && sys)
-        if (FileSystem.exists('mods')) {
-            var path_list:Array<String> = FileSystem.readDirectory('mods');
+        #if sys
+        if (FileSystem.exists(#if mobile Sys.getCwd() + #end 'mods')) {
+            var path_list:Array<String> = FileSystem.readDirectory(#if mobile Sys.getCwd() + #end 'mods');
 
             for (cur_path in path_list) {
-                var mod_path:String = FileSystem.absolutePath('mods/${cur_path}');
+                var mod_path:String = FileSystem.absolutePath(#if mobile Sys.getCwd() + #end 'mods/${cur_path}');
                 if (!FileSystem.isDirectory(mod_path)) { continue; }
                 list.push(new Mod(mod_path));
             }

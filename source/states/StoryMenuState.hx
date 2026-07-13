@@ -13,9 +13,10 @@ import flixel.FlxG;
 
 #if desktop
 import utils.Discord;
+#end
+
 import sys.FileSystem;
 import sys.io.File;
-#end
 
 using utils.Files;
 using StringTools;

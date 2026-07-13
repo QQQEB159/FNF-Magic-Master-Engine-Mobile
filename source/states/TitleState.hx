@@ -23,11 +23,14 @@ import openfl.Assets;
 import flixel.FlxG;
 import haxe.Timer;
 
-#if (desktop && sys)
-import utils.Discord;
+#if sys
 import sys.thread.Thread;
 import sys.FileSystem;
 import sys.io.File;
+#end
+
+#if desktop
+import utils.Discord;
 #end
 
 using utils.Files;

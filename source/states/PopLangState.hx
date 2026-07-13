@@ -25,7 +25,7 @@ import utils.Magic;
 import flixel.FlxG;
 import haxe.Json;
 
-#if (desktop && sys)
+#if sys
 import sys.FileSystem;
 import sys.io.File;
 #end

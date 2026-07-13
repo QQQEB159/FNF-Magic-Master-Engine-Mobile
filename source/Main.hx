@@ -20,7 +20,7 @@ import haxe.io.Path;
 import flixel.FlxG;
 import openfl.Lib;
 
-#if desktop
+#if sys
 import sys.FileSystem;
 import sys.io.Process;
 import sys.io.File;
@@ -64,18 +64,7 @@ class Main extends Sprite {
 	}
 
 	private function setupGame():Void {
-		var stageWidth:Int = Lib.current.stage.stageWidth;
-		var stageHeight:Int = Lib.current.stage.stageHeight;
-
-		if (zoom == -1) {
-			var ratioX:Float = stageWidth / gameWidth;
-			var ratioY:Float = stageHeight / gameHeight;
-			zoom = Math.min(ratioX, ratioY);
-			gameWidth = Math.ceil(stageWidth / zoom);
-			gameHeight = Math.ceil(stageHeight / zoom);
-		}
-
-		#if !debug
+        #if !debug
 		initialState = states.PreLoaderState;
 		#end
 
@@ -108,7 +97,7 @@ class Main extends Sprite {
 		#end
 		
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, framerate, framerate, skipSplash, startFullscreen));
-		#if !mobile addChild(Info); #end
+		FlxG.game.addChild(Info);
 	}
 
 	function onCrash(e:UncaughtErrorEvent):Void {
@@ -120,7 +109,7 @@ class Main extends Sprite {
 		dateNow = StringTools.replace(dateNow, " ", "_");
 		dateNow = StringTools.replace(dateNow, ":", "'");
 
-		path = "./crash/" + "MagicMaster_" + dateNow + ".txt";
+		path = "crash/" + "MagicMaster_" + dateNow + ".txt";
 
 		for (stackItem in callStack)
 		{
@@ -135,8 +124,8 @@ class Main extends Sprite {
 
 		errMsg += "\nUncaught Error: " + e.error;
 
-		if (!FileSystem.exists("./crash/"))
-			FileSystem.createDirectory("./crash/");
+		if (!FileSystem.exists("crash/"))
+			FileSystem.createDirectory("crash/");
 
 		File.saveContent(path, errMsg + "\n");
 
