@@ -343,7 +343,7 @@ class AlphaCharacter extends FlxSprite
 	{
 		super(x, y);
 	    
-		image = 'alphabet2';
+		image = 'alphabet';
 	}
 	
 	public var curLetter:Letter = null;

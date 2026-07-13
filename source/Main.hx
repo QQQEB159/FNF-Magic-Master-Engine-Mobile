@@ -26,6 +26,11 @@ import sys.io.Process;
 import sys.io.File;
 #end
 
+#if android
+import android.content.Context;
+import android.os.Build;
+#end
+
 class Main extends Sprite {
 	var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
 	var gameHeight:Int = 720; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
