@@ -1,0 +1,59 @@
+[
+    {
+        "profile": "default",
+        "pkgs": [
+            {
+                "name": "flixel",
+                "version": "5.2.2"
+            },
+            {
+                "name": "flixel-addons",
+                "version": "3.0.2"
+            },
+            {
+                "name": "flixel-ui",
+                "version": "2.5.0"
+            },
+            {
+                "name": "hscript",
+                "version": "2.5.0"
+            },
+            {
+                "name": "hxcpp-debug-server",
+                "version": "1.2.4"
+            },
+            {
+                "name": "hxcpp",
+                "link": "https://github.com/ShadowEngineTeam/hxcpp",
+                "branch": "main"
+            },
+            {
+                "name": "hxCodec",
+                "version": "2.6.1"
+            },
+            {
+                "name": "lime",
+                "link": "https://github.com/QQQEB159/lime-8.2.2",
+                "branch": "b60d13d75b97e927ef30abdbdb93d92078b8fa1e"
+            },
+            {
+                "name": "openfl",
+                "version": "9.2.2"
+            },
+            {
+                "name": "newgrounds",
+                "version": "1.3.0"
+            },
+            {
+                "name": "haxeui-flixel",
+                "link": "https://github.com/haxeui/haxeui-flixel",
+                "branch": "b899a4c7d7318c5ff2b1bb645fbc73728fad1ac9"
+            },
+            {
+                "name": "haxeui-core",
+                "link": "https://github.com/FunkinCrew/haxeui-core",
+                "branch": "998534fb830450ca1e60c47a9524af5730431145"
+            }
+        ]
+    }
+]
