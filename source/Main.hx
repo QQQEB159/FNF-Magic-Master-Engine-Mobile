@@ -114,6 +114,10 @@ class Main extends Sprite {
 		
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, framerate, framerate, skipSplash, startFullscreen));
 		FlxG.game.addChild(Info);
+		
+		#if android
+		FlxG.android.preventDefaultKeys = [BACK]; 
+		#end
 	}
 
 	function onCrash(e:UncaughtErrorEvent):Void {

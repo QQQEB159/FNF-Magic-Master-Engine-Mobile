@@ -2,6 +2,7 @@ package objects.scripts;
 
 import states.MusicBeatState;
 import flixel.FlxBasic;
+import flixel.FlxG;
 import openfl.Lib;
 
 #if sys
@@ -61,7 +62,7 @@ class Script extends FlxBasic {
             this.program = parser.parseString(script);
         } catch(e) {
             trace('[Script Error]: ${e.message}\n${source}');
-            Lib.application.window.alert(e.message, "Script Error!");
+            FlxG.stage.window.alert(e.message, "Script Error!");
         }
         
         if (doExecute) { execute(); }
@@ -147,10 +148,10 @@ class Script extends FlxBasic {
         var toReturn = null;
         if (args != null) {
             try { toReturn = Reflect.callMethod(null, FUNCT, args); } 
-            catch(e) { trace('${this.name} | {${name}}: [Function Error](${name}): ${e.toString()}'); }
+            catch(e) { trace('${this.name} | {${name}}: [Function Error](${name}): ${e.toString()}'); FlxG.stage.window.alert('(${name}): ${e.toString()}', "Function Error!"); }
         } else {
             try { toReturn = FUNCT(); } 
-            catch(e) { trace('${this.name} | {${name}}: [Function Error](${name}): ${e.toString()}'); }
+            catch(e) { trace('${this.name} | {${name}}: [Function Error](${name}): ${e.toString()}'); FlxG.stage.window.alert('(${name}): ${e.toString()}', "Function Error!"); }
         }
 
         return toReturn;
